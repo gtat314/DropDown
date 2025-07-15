@@ -205,6 +205,12 @@ DropDownBox.prototype.setValue = function( value ) {
 
         valueNice = value;
 
+        if ( valueNice === null ) {
+
+            valueNice = 'null';
+
+        }
+
     }
 
     this._inputElem.value = valueNice;
@@ -241,11 +247,18 @@ DropDownBox.prototype.clearError = function() {
 
 /**
  * 
+ * @param {Boolean} allowNull
  * @returns {String|HTMLElement}
  */
-DropDownBox.prototype.getValue = function() {
+DropDownBox.prototype.getValue = function( allowNull ) {
 
     if ( this._inputElem !== null ) {
+
+        if ( typeof allowNull !== 'undefined' && allowNull === true && this._inputElem.value === 'null' ) {
+
+            return null;
+
+        }
 
         return this._inputElem.value;
 
