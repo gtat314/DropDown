@@ -1,6 +1,6 @@
-/**
- * @htmlReadyMethods
- */
+var DropDownBoxIcons = {
+    'default': "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 7.33 2.83 4.5 12 13.84l9.17-9.34L24 7.33 12 19.5z'/></svg>"
+};
 
 
 
@@ -70,7 +70,7 @@ function DropDownBox( schema ) {
      * @property
      * @private
      */
-    this._iconDefaultSrc = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M0 7.33 2.83 4.5 12 13.84l9.17-9.34L24 7.33 12 19.5z'/></svg>";
+    this._iconDefaultSrc = DropDownBoxIcons[ 'default' ];
 
     /**
      * 
