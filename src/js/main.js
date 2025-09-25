@@ -79,6 +79,13 @@ function DropDownBox( schema ) {
      */
     this._inputId = null;
 
+    /**
+     * @property
+     * @private
+     * @type {CallableFunction}
+     */
+    this._handleChangeInputElem = this._evt_change_inputElem.bind( this );
+
 
 
 
@@ -115,7 +122,7 @@ function DropDownBox( schema ) {
 
     }
 
-    this._inputElem.addEventListener( 'change', this._evt_change_inputElem.bind( this ) );
+    this._inputElem.addEventListener( 'change', this._handleChangeInputElem );
 
     if ( schema.hasOwnProperty( 'value' ) ) {
 
